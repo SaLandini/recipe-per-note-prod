@@ -8,6 +8,11 @@ Recipe per note é um projeto de um sistema de organização pessoal, e também 
 - Desenvolvimento
   - Geral
   - Pastas
+    - teste-htcss
+      - pages
+      - models
+      - styles
+    - teste-code
 - Autores
 
 ___
@@ -37,6 +42,10 @@ _ToDo_
 ### Pastas
 
 **Teste-htcss** : Onde vai ficar os arquivos brutos do Html e Css
+
+- Pages: onde fica as outras paginas fora index
+- Models: onde fica os models
+- Styles: css
 
 **Teste-code** : Vai ficar um "Projeto paralelo" pra ir testando umas coisas antes de passar projeto final
 
