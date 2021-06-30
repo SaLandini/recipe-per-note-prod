@@ -127,17 +127,6 @@ section{
 	padding: 0px 10px;
 }
 
-.footer{
-	position: absolute;
-	width: 100%;
-	height: 160px;
-	left: 0px;
-	margin-bottom: 0%;
-	padding-bottom: 0%;
-
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #6506FF;
-}
-
 .img-logotipo{
 	text-align: center;
 }
@@ -153,8 +142,6 @@ section{
 	transform: matrix(-0.01, -1, 1, 0, 0, 0);
 	
 	grid-area: line01;
-	
-	background-color: #32f067;
 }
 
 .logotipo-grid{
@@ -178,8 +165,7 @@ section{
 
 .footer-container{
 	position: absolute;
-	
-	align-items: middle;
+	place-self: center;
 	
 	left: 0px;
 	margin-bottom: 0%;
@@ -188,12 +174,12 @@ section{
 	width: 100%;
 	
 	display: grid;
-	grid-template-columns: 1fr 100px 1fr;
+	grid-template-columns: 3fr 1fr 3fr;
 	grid-template-rows: auto;
 	grid-template-areas: 
     "img01 line01 text01";
 	
-	background: #6506FF;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #6506FF;
 }
 
 .wrapper {
@@ -230,6 +216,7 @@ section{
   	position: relative;
   	z-index: 1;
   	overflow: hidden;
+	cursor: pointer;
 }
 
 #slide:hover {
