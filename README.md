@@ -1,3 +1,11 @@
+# WESLEY _ToDo_
+
+## Da uma olhada nos buttons da page-notes e page-day
+
+## Vê se consegue arrumar* e se arrumar tira isso.
+
+*deixar igual ou sla.
+
 # RECIPE PER NOTE
 
 Recipe per note é um projeto de um sistema de organização pessoal, e também o meu TCC no Tecnico em Desenvolvimento de sistemas.

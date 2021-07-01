@@ -1,143 +1,136 @@
 /* Links */
 
-
 /* Tags */
 
-*{
-	font-family: Roboto, sans-serif;
-	box-sizing:border-box;
-	text-align:center;
-
+* {
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    text-align: center;
     padding: 0;
     margin: 0;
     position: relative;
-        
 }
 
 /* Class */
 
-.content{
+.content {
     padding-top: 25px;
     position: relative;
 }
 
-.box{
+.box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-	font-style: normal;
-	font-weight: 500;
-    color: #fff;
-}
-
-.box_morning{
-    background-color: #8d97d3;
-
-    width: 380px;
-    height: 190px;
-    margin: 15px;
-    padding: 25px;
-
-    border-radius: 5px;
-}
-
-.box_afternoon{
-    background-color: #5364c5;
-
-    width: 380px;
-    height: 190px;
-    margin: 15px;
-    padding: 25px;
-
-    border-radius: 5px;
-}
-
-.box_night{
-    background-color: #232638;
-    
-    width: 380px;
-    height: 190px;
-    margin: 15px;
-    padding: 25px;
-    
-    border-radius: 5px;
-}
-
-.box_p{
     font-style: normal;
-	font-weight: 300;
+    font-weight: 500;
     color: #fff;
+}
 
+.box_morning {
+    background-color: #8d97d3;
+    width: 380px;
+    height: 190px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.box_afternoon {
+    background-color: #5364c5;
+    width: 380px;
+    height: 190px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.box_night {
+    background-color: #232638;
+    width: 380px;
+    height: 190px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.box_p {
+    font-style: normal;
+    font-weight: 300;
+    color: #fff;
     padding: 15px;
 }
 
-.box_button{
+.box_button {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.btn {
+    color: #310057;
+    background-color: white;
+    border: 2px solid #6100FF;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #6100FF;
+    color: white;
 }
 
 /* IDs */
 
-#box_button-btn1{
+#box_button-btn1 {
     background-color: transparent;
     border: 2px solid #fff;
-
     border-radius: 5px;
     width: 80px;
     height: 30px;
     padding: 3px;
-
     color: #fff;
-    align-self:auto;
-
-    -webkit-transition-duration: 0.4s; 
+    align-self: auto;
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
-#box_button-btn1:hover{
+#box_button-btn1:hover {
     background-color: #fff;
-    color:#8d97d3;
+    color: #8d97d3;
 }
 
-#box_button-btn2{
+#box_button-btn2 {
     background-color: transparent;
     border: 2px solid #fff;
-
     border-radius: 5px;
     width: 80px;
     height: 30px;
     padding: 3px;
-
     color: #fff;
-    align-self:auto;
-
-    -webkit-transition-duration: 0.4s; 
+    align-self: auto;
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
-#box_button-btn2:hover{
+#box_button-btn2:hover {
     background-color: #fff;
-    color:#5364c5;
+    color: #5364c5;
 }
 
-#box_button-btn3{
+#box_button-btn3 {
     background-color: transparent;
     border: 2px solid #fff;
-
     border-radius: 5px;
     width: 80px;
     height: 30px;
     padding: 3px;
-
     color: #fff;
-    align-self:auto;
-
-    -webkit-transition-duration: 0.4s; 
+    align-self: auto;
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
 }
 
-#box_button-btn3:hover{
+#box_button-btn3:hover {
     background-color: #fff;
-    color:#232638;
+    color: #232638;
 }

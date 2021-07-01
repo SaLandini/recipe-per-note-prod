@@ -1,74 +1,89 @@
 /* Links */
 
-
 /* Tags */
 
-*{
+* {
 	font-family: Roboto, sans-serif;
-	box-sizing:border-box;
-	text-align:center;
+	box-sizing: border-box;
+	text-align: center;
 }
 
-a{
+a {
 	text-emphasis: none;
 	text-decoration: none;
 	color: #fff;
 }
 
-p{
+p {
 	color: #191919;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 18px;
 }
 
-h1{	
+h1 {
 	color: #310057;
 	font-size: 30px;
 }
 
-h2{
+h2 {
 	padding-top: 20px;
 	color: #310057;
 }
 
-img{
-    margin: 0 auto;
+img {
+	margin: 0 auto;
 	max-width: 100%;
 	max-height: 100%;
 	min-width: 0;
-    padding: 15px;
+	padding: 15px;
 }
 
-section{
+section {
 	margin-top: 650px;
 	margin-bottom: 35px;
 }
 
 /* Class */
 
-.img-logo{
-  width: 70px;
-  height: 70px;
+.img-logo {
+	width: 70px;
+	height: 70px;
 }
 
-.logo{
+.logo {
 	text-align: left;
 }
 
-.content{
-    margin: 0 auto;
+.button {
+	margin-top: 15px;
+	margin-bottom: auto;
+}
+
+.btn {
+	color: #310057;
+	background-color: white;
+	border: 2px solid #6100FF;
+	border-radius: 5px;
+}
+
+.btn:hover {
+	background-color: #6100FF;
+	color: white;
+}
+
+.content {
+	margin: 0 auto;
 	max-width: 850px;
 	width: 100%;
 	min-width: 0;
-    padding: 15px;
+	padding: 15px;
 }
 
-.container-header{
+.container-header {
 	font-style: normal;
 	color: #FFFFFF;
 	font-weight: 500;
-	
 	display: flex;
 	justify-content: space-between;
 	align-items: end;
@@ -77,16 +92,14 @@ section{
 	height: 600px;
 	left: 0px;
 	top: 0px;
-
 	background: linear-gradient(180deg, #AD00FF 0%, rgba(255, 255, 255, 0) 100%), #6100FF;
 }
 
-.header{
+.header {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 35px;
 	text-align: right;
-	
 	position: absolute;
 	width: 90%;
 	height: 70px;
@@ -95,13 +108,11 @@ section{
 	top: 25px;
 }
 
-.logotipo{
+.logotipo {
 	text-align: center;
 	letter-spacing: 0.05em;
 	color: #FFFFFF;
-	
 	line-height: 35px;
-	
 	position: absolute;
 	width: 90%;
 	height: 300px;
@@ -110,16 +121,16 @@ section{
 	top: 40%;
 }
 
-.logotipo-h1{
+.logotipo-h1 {
 	font-weight: bold;
-	font-size:  72px;
+	font-size: 72px;
 }
 
-.logotipo-text{
+.logotipo-text {
 	font-size: 48px;
 }
 
-.nav_links{
+.nav_links {
 	list-style: none;
 	margin-top: -60px;
 	text-align: right;
@@ -127,39 +138,36 @@ section{
 	justify-content: space-around;
 }
 
-.nav_links li{
+.nav_links li {
 	display: inline-block;
 	padding: 0px 10px;
 }
 
-.img-logotipo{
+.img-logotipo {
 	text-align: center;
 }
 
-.line-grid{
+.line-grid {
 	position: absolute;
 	margin-top: 70px;
 	width: 100px;
 	height: 0px;
 	margin-left: 40px;
-
 	border: 1px solid #FFFFFF;
 	transform: matrix(-0.01, -1, 1, 0, 0, 0);
-	
 	grid-area: line01;
 }
 
-.logotipo-grid{
+.logotipo-grid {
 	grid-area: img01;
 	margin-top: 35px;
 }
 
-.text-grid{
+.text-grid {
 	grid-area: text01;
 	display: flex;
 	justify-content: space-between;
 	padding-top: 115px;
-	
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 35px;
@@ -167,23 +175,18 @@ section{
 	color: #FFFFFF;
 }
 
-
-.footer-container{
+.footer-container {
 	position: absolute;
 	place-self: center;
-	
 	left: 0px;
 	margin-bottom: 0%;
 	padding-bottom: 0%;
 	height: 140px;
 	width: 100%;
-	
 	display: grid;
 	grid-template-columns: 3fr 1fr 3fr;
 	grid-template-rows: auto;
-	grid-template-areas: 
-    "img01 line01 text01";
-	
+	grid-template-areas: "img01 line01 text01";
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #6506FF;
 }
 
@@ -192,8 +195,8 @@ section{
 	width: 100%;
 	margin: 2rem auto;
 	padding: 5rem;
-  	text-align: center;
-  	background: #fff;
+	text-align: center;
+	background: #fff;
 }
 
 /* IDs */
@@ -212,46 +215,46 @@ section{
 
 #slide {
 	width: 300px;
-  	font-size: 2em;
-  	background: #6506FF;
- 	color: #fff;
- 	border: 0.25rem solid #6506FF;
-  	padding: 0.85em 0.75em;
-  	margin: 1rem;
-  	position: relative;
-  	z-index: 1;
-  	overflow: hidden;
+	font-size: 2em;
+	background: #6506FF;
+	color: #fff;
+	border: 0.25rem solid #6506FF;
+	padding: 0.85em 0.75em;
+	margin: 1rem;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
 	cursor: pointer;
 }
 
 #slide:hover {
-  	color: #6506FF;
+	color: #6506FF;
 }
 
 #slide::after {
-  	content: "";
-  	background: #ffffff;
-  	position: absolute;
-  	z-index: -1;
-  	padding: 0.85em 0.75em;
-  	display: block;
+	content: "";
+	background: #ffffff;
+	position: absolute;
+	z-index: -1;
+	padding: 0.85em 0.75em;
+	display: block;
 }
 
 #slide[class^="slide"]::after {
-  	transition: all 0.35s;
+	transition: all 0.35s;
 }
 
 #slide[class^="slide"]:hover::after {
-  	left: 0;
-  	right: 0;
-  	top: 0;
-  	bottom: 0;
-  	transition: all 0.35s;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: all 0.35s;
 }
 
 #slide.slide_from_left::after {
-  	top: 0;
-  	bottom: 0;
-  	left: -100%;
-  	right: 100%;
+	top: 0;
+	bottom: 0;
+	left: -100%;
+	right: 100%;
 }
