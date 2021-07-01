@@ -1,0 +1,70 @@
+/* Links */
+
+/* Tags */
+
+ul, li {
+    list-style: none;
+}
+
+.box-list li{
+	display: inline-block;
+
+	padding: 0px 10px;
+}
+
+.box-list_link a{
+    color: blue;
+}
+
+.box-list_button a{
+    font-style: normal;
+
+    font-weight: 500;
+    color: #191919;
+    font-size: 18px;
+}
+
+/* Class */
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+    margin-left: 50px;
+    width: 700px;
+}
+
+.box-list {
+    background-color: rgb(241, 241, 241);
+
+    height: 50px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.box-list_link {
+    text-overflow: ellipsis;
+    text-align: left;
+
+    margin-top: 15px;
+    margin-left: -50px;
+    width: 400px;
+    margin-right: 65px;
+}
+
+.box-list_button{
+    text-align: center;
+    align-self: flex-end;
+
+    margin-right: -20px;
+    margin-left: 5px;
+    width: 75px;
+}
+
+.div-button button{
+    position: relative;
+    left: 320px;
+}
+
+/* IDs */
