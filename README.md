@@ -1,11 +1,3 @@
-# WESLEY _ToDo_
-
-## Da uma olhada nos buttons da page-notes e page-day
-
-## Vê se consegue arrumar* e se arrumar tira isso.
-
-*deixar igual ou sla.
-
 # RECIPE PER NOTE
 
 Recipe per note é um projeto de um sistema de organização pessoal, e também o meu TCC no Tecnico em Desenvolvimento de sistemas.
@@ -26,7 +18,7 @@ Recipe per note é um projeto de um sistema de organização pessoal, e também 
 ___
 ## Sobre
 
-Com dito acima, esse é (pelo menos inicialmente) um projeto de TCC, que irá utilizar o Elixir e Phoenix como Backend//Frontend,
+Com dito acima, esse é um projeto de TCC, que irá utilizar o Elixir e Phoenix como Backend//Frontend,
 
 PostgreSQL com banco de dados, o ngrok pra hosteamento do server, e outras coisa que mais pra frente vai ser mais definido que agora.
 
@@ -68,6 +60,6 @@ _Murilo Vidor Dias_ - TF2 player & Developer
 
 _Rafael Salandin Moraes_ - Quantum Alchemist & a Bad Musician
 
-Wesley Amadeu Stefano - Developer & Big Chico's friend
+_Wesley Amadeu Stefano_ - Developer & Big Chico's friend
 
 ___

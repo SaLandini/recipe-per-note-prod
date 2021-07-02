@@ -1,4 +1,8 @@
+/* Links */
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+/* Tags */
 
 *{
 	font-family: 'Noto Sans JP', sans-serif;
@@ -15,6 +19,8 @@ a {
 	text-decoration: none;
 	text-emphasis: none;
 }
+
+/* Class */
 
 .header{
 	width: 100%;
