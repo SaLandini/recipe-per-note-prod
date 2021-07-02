@@ -1,48 +1,68 @@
+/* Links */
+
+/* Tags */
+
 li {
-    font-family: Roboto, sans-serif;
     font-size: medium;
     list-style: none;
+    font-family: Roboto, sans-serif;
+
     background-color: rgba(238, 232, 143, 0.904);
-    width: 250px;
     border-bottom: solid 7.5px rgba(241, 227, 30, 0.904);
+    
+    width: 250px;
     border-radius: 15px 15px 5px 5px;
     margin: 1.5px 5px 10px;
 }
 
-.ol {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-    justify-content: center;
-    text-align: center;
-}
-
 .ol p {
-    color: #191919;
     font-style: normal;
     font-weight: normal;
+
+    color: #191919;
     font-size: 16px;
     padding: 0px 15px 5px 15px;
 }
 
 .ol a {
-    color: #191919;
     font-style: normal;
     font-weight: bold;
+
+    color: #191919;
     font-size: 18px;
 }
 
+/* Class */
+
+.ol {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    text-align: center;
+
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
 .button-all {
-    background-color: #6100FF;
+    cursor: pointer;
     border: none;
     color: white;
     font-weight: bold;
-    padding: 10px 26px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    
+    background-color: #6100FF;
+    padding: 10px 26px;
     font-size: 16px;
     margin: 4px 2px;
     transition-duration: 0.4s;
-    cursor: pointer;
 }
+
+.div-button button{
+    position: relative;
+    left: 425px;
+}
+
+/* IDs */
