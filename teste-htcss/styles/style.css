@@ -44,6 +44,27 @@ section {
 	margin-bottom: 35px;
 }
 
+*::selection {
+	background-color: #724ed4;
+	color: #fff;
+}
+  
+body::-webkit-scrollbar {
+	width: 11px;
+	background-color: #eff1f5;
+}
+  
+body::-webkit-scrollbar-track{
+	border-radius: 2px;
+	background-color: transparent;
+}
+  
+body::-webkit-scrollbar-thumb{
+	border-radius:5px;
+	background-color:#9297a7;
+	border:2px solid #eff1f5
+}
+
 /* Class */
 
 .button-all {
