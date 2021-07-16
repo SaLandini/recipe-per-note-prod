@@ -3,9 +3,7 @@
 /* Tags */
 
 li {
-    font-size: medium;
     list-style: none;
-    font-family: Roboto, sans-serif;
 
     background-color: rgba(238, 232, 143, 0.904);
     border-bottom: solid 7.5px rgba(241, 227, 30, 0.904);
@@ -21,48 +19,34 @@ li {
 
     color: #191919;
     font-size: 16px;
-    padding: 0px 15px 5px 15px;
+    padding: 0px 15px 0px 15px;
 }
 
 .ol a {
     font-style: normal;
     font-weight: bold;
+    text-align: center;
 
     color: #191919;
     font-size: 18px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.div-button button {
+    position: relative;
+    left: 370px;
+    margin-bottom: 25px;
 }
 
 /* Class */
 
 .ol {
     display: grid;
-    grid-template-rows: auto;
     justify-content: center;
     text-align: center;
 
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-
-.button-all {
-    cursor: pointer;
-    border: none;
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    
-    background-color: #6100FF;
-    padding: 10px 26px;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-}
-
-.div-button button{
-    position: relative;
-    left: 425px;
 }
 
 /* IDs */
