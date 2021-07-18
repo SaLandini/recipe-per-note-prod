@@ -3,7 +3,6 @@
 /* Tags */
 
 * {
-    font-family: Roboto, sans-serif;
     box-sizing: border-box;
     text-align: center;
     padding: 0;
@@ -11,16 +10,13 @@
     position: relative;
 }
 
-.content h1{
-    margin-top: 15px;
+.div-button button{
+    position: relative;
+    left: 370px;
+    margin-bottom: 25px;
 }
 
 /* Class */
-
-.content {
-    padding-top: 25px;
-    position: relative;
-}
 
 .box {
     display: flex;
@@ -34,7 +30,6 @@
 .box_morning {
     background-color: #8d97d3;
     width: 380px;
-    height: 190px;
     margin: 15px;
     padding: 25px;
     border-radius: 5px;
@@ -43,7 +38,6 @@
 .box_afternoon {
     background-color: #5364c5;
     width: 380px;
-    height: 190px;
     margin: 15px;
     padding: 25px;
     border-radius: 5px;
@@ -52,7 +46,6 @@
 .box_night {
     background-color: #232638;
     width: 380px;
-    height: 190px;
     margin: 15px;
     padding: 25px;
     border-radius: 5px;
@@ -69,11 +62,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-
-.div-button button{
-    position: relative;
-    left: 380px;
+    padding-top: 5px;
 }
 
 /* IDs */
@@ -84,7 +73,6 @@
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 3px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;
@@ -102,7 +90,6 @@
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 3px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;
@@ -120,7 +107,6 @@
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 3px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;

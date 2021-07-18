@@ -1,9 +1,11 @@
 /* Links */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
 /* Tags */
 
-* {
-    font-family: Roboto, sans-serif;
+*{
+	font-family: 'Noto Sans JP', sans-serif;
     box-sizing: border-box;
     text-align: center;
     padding: 0;
@@ -34,12 +36,13 @@ h4 {
 	color: #191919;
 }
 
-/* Class */
-
-.content {
-    padding-top: 25px;
+.div-button button {
     position: relative;
+    left: 370px;
+    margin-bottom: 25px;
 }
+
+/* Class */
 
 .box {
     display: flex;
@@ -100,11 +103,6 @@ h4 {
     justify-content: space-evenly;
 }
 
-.div-button button{
-    position: relative;
-    left: 380px;
-}
-
 /* IDs */
 
 #box_button-btn1 {
@@ -113,7 +111,6 @@ h4 {
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 4px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;
@@ -131,7 +128,6 @@ h4 {
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 4px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;
@@ -149,7 +145,6 @@ h4 {
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 4px;
     color: #fff;
     align-self: auto;
     -webkit-transition-duration: 0.4s;
@@ -167,7 +162,6 @@ h4 {
     border-radius: 5px;
     width: 80px;
     height: 30px;
-    padding: 4px;
     color: #191919;
     align-self: auto;
     -webkit-transition-duration: 0.4s;

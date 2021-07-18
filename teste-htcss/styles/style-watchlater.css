@@ -8,8 +8,6 @@ ul, li {
 
 .box-list li{
 	display: inline-block;
-
-	padding: 0px 10px;
 }
 
 .box-list_link a{
@@ -19,9 +17,15 @@ ul, li {
 .box-list_button a{
     font-style: normal;
 
-    font-weight: 500;
+    font-weight: 600;
     color: #191919;
     font-size: 18px;
+}
+
+.div-button button{
+    position: relative;
+    left: 370px;
+    margin-bottom: 25px;
 }
 
 /* Class */
@@ -30,6 +34,7 @@ ul, li {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    color: blue;
     
     margin-left: 50px;
     width: 700px;
@@ -39,32 +44,29 @@ ul, li {
     background-color: rgb(241, 241, 241);
 
     height: 50px;
-    margin-top: 15px;
     border-radius: 5px;
 }
 
 .box-list_link {
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
+    direction: ltr;
     text-align: left;
 
-    margin-top: 15px;
     margin-left: -50px;
     width: 400px;
-    margin-right: 65px;
+    margin-top: 12px;
+    margin-bottom: -4px;
 }
 
 .box-list_button{
     text-align: center;
-    align-self: flex-end;
+    direction: ltr;
+    align-self: center;
 
-    margin-right: -20px;
-    margin-left: 5px;
-    width: 75px;
-}
-
-.div-button button{
-    position: relative;
-    left: 320px;
+    margin-left: 25px;
+    width: 55px;
 }
 
 /* IDs */
