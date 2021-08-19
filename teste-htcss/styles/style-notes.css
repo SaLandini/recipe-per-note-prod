@@ -2,17 +2,6 @@
 
 /* Tags */
 
-li {
-    list-style: none;
-
-    background-color: rgba(238, 232, 143, 0.904);
-    border-bottom: solid 7.5px rgba(241, 227, 30, 0.904);
-    
-    width: 250px;
-    border-radius: 15px 15px 5px 5px;
-    margin: 1.5px 5px 10px;
-}
-
 .ol p {
     font-style: normal;
     font-weight: normal;
@@ -49,4 +38,50 @@ li {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.post-it {
+    list-style: none;
+
+    background-color: rgba(238, 232, 143, 0.904);
+    border-bottom: solid 7.5px rgba(241, 227, 30, 0.904);
+    
+    width: 250px;
+    border-radius: 25px;
+    margin: 1.5px 5px 10px;
+}
+
+.options {
+    margin: -20px 0 10px 0;
+    text-align: center;
+}
+
+.li-btn-more {
+    list-style: none;
+    padding: 90px 65px;
+}
+
+.vertical {
+    border: 1px solid;
+    transform: rotate(90deg);
+    width: 20px;
+    color: #191919;
+}
+
 /* IDs */
+
+#btn-more {
+    text-decoration: none;
+	cursor: pointer;
+    border-radius: 100%;
+    color: #ffffff;
+    font-size: 26px;
+    background: #6506FF;
+    height: 50px;
+    width:50px;
+    padding: 6px
+  }
+  
+#btn-more:hover {
+    background: #AD00FF;
+    text-decoration: none;
+    transition-duration: 0.4s;
+  }

@@ -43,11 +43,11 @@ a {
 }
 
 .img-logo{
-    padding: 15px;
-    width: 70px;
-    height: 70px;
+    padding: 5px;
+	margin-top: -5px;
+    width: 80px;
+    height: 80px;
 }
-
 
 .menu{
     display: flex;
@@ -88,6 +88,7 @@ a {
 .menu_button:hover{
     color: #310057;
     background-color: #ececec;
+	transition-duration: all 0.4s;
 }
 
 .user{
@@ -120,4 +121,10 @@ a {
 	font-size: 20px;
 	line-height: 35px;
 	color: #FFFFFF;	
+}
+
+.vertical-line{
+	margin-top: 5px;
+	color: #310057;
+	font-size: 26px;
 }
