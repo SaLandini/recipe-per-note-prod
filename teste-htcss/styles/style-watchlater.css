@@ -69,4 +69,32 @@ ul, li {
     width: 55px;
 }
 
+.options {
+    margin: -20px 0 10px 0;
+    text-align: center;
+}
+
+.li-btn-more {
+    list-style: none;
+    padding: 90px 65px;
+}
+
 /* IDs */
+
+#btn-more {
+    text-decoration: none;
+	cursor: pointer;
+    border-radius: 100%;
+    color: #ffffff;
+    font-size: 26px;
+    background: #6506FF;
+    height: 50px;
+    width:50px;
+    padding: 6px
+  }
+  
+#btn-more:hover {
+    background: #AD00FF;
+    text-decoration: none;
+    transition-duration: 0.4s;
+  }
