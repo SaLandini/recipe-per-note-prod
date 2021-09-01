@@ -1,0 +1,82 @@
+<head>
+  <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/templates/user_session_new.css") %>"/>
+  <!--- <link rel="stylesheet" type="text/css" href="../styles/style.css"> --->
+  <title>sing-in/up</title>
+</head>
+
+<div class="container" id="container" style="box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);">
+
+  <div class="form-container sign-up-container">
+    <%= form_for @changeset, Routes.user_registration_path(@conn, :create), [ method: :post] , fn f -> %>
+      <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+          <p>Oops, something went wrong! Please check the errors below.</p>
+        </div>
+      <% end %>
+      <h1>Crie uma conta</h1><br>
+        <label for="user_name">Name</label>
+        <input id="user_name" name="user[name]" type="text" required="">
+
+        <label for="user_email">Email</label>
+        <input id="user_email" name="user[email]" type="email" required="">
+        <%= error_tag f, :email %>
+
+        <label for="user_password">Password</label>
+        <input id="user_password" name="user[password]" type="password" required="">
+        <%= error_tag f, :password %>
+
+        <%= error_tag f, :password %>
+
+      <button type="submit" data-form-action="<%= Routes.user_registration_path(@conn, :create) %>"> Registro </button>
+    <% end %>
+  </div>
+
+  <div class="form-container sign-in-container">
+    <%= form_for @conn, Routes.user_session_path(@conn, :create), [as: :user], fn f -> %>
+    <%= if @error_message do %>
+      <div class="alert alert-danger">
+        <p><%= @error_message %></p>
+      </div>
+    <% end %>
+    <h1>Entrar</h1><br>
+
+    <%= label f, :email %>
+    <%= email_input f, :email, required: true %>
+
+    <%= label f, :password %>
+    <%= password_input f, :password, required: true %>
+
+    <button type="submit" data-form-action="<%= Routes.user_session_path(@conn, :create) %>">Log in</button>
+    <% end %>
+  </div>
+
+<div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left">
+        <h1>Bem vindo de volta!</h1>
+        <p>Para continuar conectado basta fazer login com seu perfil</p>
+        <button class="ghost" id="signIn">Entrar</button>
+      </div>
+
+      <div class="overlay-panel overlay-right">
+        <h1>Olá!!</h1>
+        <p>Crie a sua conta e entre nesta jornada conosco</p>
+        <button class="ghost" id="signUp">Criar conta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  const signUpButton = document.getElementById('signUp');
+  const signInButton = document.getElementById('signIn');
+  const container = document.getElementById('container');
+
+  signUpButton.addEventListener('click', () => {
+    container.classList.add("right-panel-active");
+  });
+
+  signInButton.addEventListener('click', () => {
+    container.classList.remove("right-panel-active");
+  });
+</script>
