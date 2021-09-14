@@ -71,7 +71,21 @@ body::-webkit-scrollbar-thumb{
     margin-top: 15px;
 }
 
+.nav_links li {
+	display: inline-block;
+	padding: 0px 10px;
+}
+
 /* Class */
+
+
+.nav_links {
+	list-style: none;
+	margin-top: -60px;
+	text-align: right;
+	align-self: center;
+	justify-content: space-around;
+}
 
 .button-all {
     background-color: #6100FF;
@@ -179,64 +193,8 @@ body::-webkit-scrollbar-thumb{
 	font-size: 48px;
 }
 
-.nav_links {
-	list-style: none;
-	margin-top: -60px;
-	text-align: right;
-	align-self: center;
-	justify-content: space-around;
-}
-
-.nav_links li {
-	display: inline-block;
-	padding: 0px 10px;
-}
-
 .img-logotipo {
 	text-align: center;
-}
-
-.line-grid {
-	position: absolute;
-	margin-top: 70px;
-	width: 100px;
-	height: 0px;
-	margin-left: 40px;
-	border: 1px solid #FFFFFF;
-	transform: matrix(-0.01, -1, 1, 0, 0, 0);
-	grid-area: line01;
-}
-
-.logotipo-grid {
-	grid-area: img01;
-	margin-top: 35px;
-}
-
-.text-grid {
-	grid-area: text01;
-	display: flex;
-	justify-content: space-between;
-	padding-top: 115px;
-	font-weight: 500;
-	font-size: 24px;
-	line-height: 35px;
-	text-align: right;
-	color: #FFFFFF;
-}
-
-.footer-container {
-	position: absolute;
-	place-self: center;
-	left: 0px;
-	margin-bottom: 0%;
-	padding-bottom: 0%;
-	height: 140px;
-	width: 100%;
-	display: grid;
-	grid-template-columns: 3fr 1fr 3fr;
-	grid-template-rows: auto;
-	grid-template-areas: "img01 line01 text01";
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #6506FF;
 }
 
 .wrapper {
@@ -251,15 +209,11 @@ body::-webkit-scrollbar-thumb{
 /* IDs */
 
 #create-login:hover {
-	text-decoration: underline;
 	text-decoration-color: #6100FF;
 	background-color: #6506FF;
 	padding: 8px;
-	border-radius: 20px;
-}
-
-#footer-a:hover {
-	text-decoration: underline;
+	border-radius: 20px;	
+	transition: 0.25s;
 }
 
 #slide {
