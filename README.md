@@ -115,7 +115,7 @@ E Pronto, a contribuição estará feita!
 
 ## Autores
 
-_Murilo Vidor Dias_ - TF2 player & Developer
+_Murilo Vidor Dias_ - PokemonGO player & Developer
 
 _Rafael Salandin Moraes_ - Quantum Alchemist & a Bad Musician
 
