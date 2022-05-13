@@ -7,6 +7,8 @@ Recipe per note é um projeto de um sistema de organização pessoal, e também 
   - O que é o Projeto?
 - Desenvolvimento
   - _Primeira Parte_
+  - _Segunda Parte_
+  - _Terceira Parte_
   - Pastas
     - teste-htcss
       - pages
@@ -25,7 +27,7 @@ ___
 Com dito acima, esse é um projeto de TCC, que irá utilizar o Elixir e Phoenix como Backend//Frontend,
 
 PostgreSQL com banco de dados, o ngrok pra hosteamento do server, e outras coisa que mais pra frente vai ser mais definido que agora.
-
+___
 ### Techs usadas
 
 Elixir
@@ -33,7 +35,7 @@ Elixir
 Phoenix
 
 PostgreSQL
-
+___
 ### O que é o Projeto?
 
 _ToDo_
@@ -41,7 +43,7 @@ _ToDo_
 
 
 ## Desenvolvimento
-
+___
 ### _Primeira Parte_
 
 ​	A primeira parte do desenvolvimento consiste em iniciar o projeto, fazendo o sistema de login
@@ -49,7 +51,19 @@ _ToDo_
 com o ```mix gen.auth```, configurar o banco, coisas desse tipo, começar a dar corpo pro projeto, com o html/css.
 
 > A gente ainda não começou a fazer o desenvolvimento em si, só umas organizações
+___
+### _Segunda Parte_
 
+​	A segunda parte do desenvolvimento se dá pela criação das abas `Notes`,`ToDo`,`WatchLater`,`Day`. Mas antes disso, a gente mexeu com o `Mailer`, para fazer o envio de emails para o usuário criado quando necessário.
+
+Usando `mix gen.live`, criando as abas a serem desenvolvidas.
+
+Na parte do `Day` é um resumo geral das aplicações do Recipe Per Note, nele você encontra o `Notes`,`ToDo` && `WatchLater`
+___
+### _Terceira Parte_
+
+Basicamente, terminamos o projeto e eu demorei um tempão pra subir ele.
+___
 ### Pastas
 
 **Teste-htcss** : Onde vai ficar os arquivos brutos do Html e Css
@@ -63,7 +77,7 @@ com o ```mix gen.auth```, configurar o banco, coisas desse tipo, começar a dar 
 **Recipe_per_note**: É a pasta principal do projeto
 
 > Spoiler, é a pasta do projeto final, quem diria.
-
+___
 ### Contribuir 
 
 Para poder contribuir, primeiro você deveria conseguir rodar o projeto primeiro.
@@ -85,8 +99,7 @@ mix archive.install hex phx_new 1.5.12
 feito isso, e com o PostgreSQL iniciado, abra a pasta `\recipe_per_note` no terminal e rode os comandos:
 
 ``` bash
-mix ecto.create
-mix ecto.migrate
+mix setup
 
 iex -S mix phx.server
 #ou 
@@ -111,8 +124,10 @@ Para contribuir com esse projeto do balacobaco, você:
 
 E Pronto, a contribuição estará feita!
 
-# 
-
+___
+### More About It.
+Lê o pdf :)
+___
 ## Autores
 
 _Murilo Vidor Dias_ - PokemonGO player & Developer
@@ -122,3 +137,5 @@ _Rafael Salandin Moraes_ - Quantum Alchemist & a Bad Musician
 _Wesley Amadeu Stefano_ - Developer & Big Chico's friend
 
 ___
+
+> OBS.: devido a demora de subir o resto do projeto, coisas poderam não funcionar

@@ -14,9 +14,10 @@ defmodule RecipePerNote.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: RecipePerNote.PubSub},
       # Start the Endpoint (http/https)
-      RecipePerNoteWeb.Endpoint
+      RecipePerNoteWeb.Endpoint,
       # Start a worker by calling: RecipePerNote.Worker.start_link(arg)
       # {RecipePerNote.Worker, arg}
+      {Oban, oban_config()}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
@@ -30,5 +31,10 @@ defmodule RecipePerNote.Application do
   def config_change(changed, _new, removed) do
     RecipePerNoteWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  # Conditionally disable queues or plugins here.
+  defp oban_config do
+    Application.fetch_env!(:recipe_per_note, Oban)
   end
 end

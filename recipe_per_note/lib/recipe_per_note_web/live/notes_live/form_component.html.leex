@@ -1,0 +1,22 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/form/todo-form.css") %>"/>
+
+<div class="box-form" align="center">
+<%= f = form_for @changeset, "#",
+  id: "notes-form",
+  phx_target: @myself,
+  phx_change: "validate",
+  phx_submit: "save" %>
+
+  <%= label f, :title %>
+  <%= text_input f, :title, class: "title-input"%>
+  <%= error_tag f, :title %>
+
+  <%= label f, :descri_notes %>
+  <%= text_input f, :descri_notes, class: "description-input" %>
+  <%= error_tag f, :descri_notes %>
+
+  <%= hidden_input f, :user_id, value: @current_user.id%>
+
+  <%= submit "Save", phx_disable_with: "Saving...", class: "btn-save"%>
+</form>
+</div>

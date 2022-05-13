@@ -1,4 +1,5 @@
 defmodule RecipePerNoteWeb do
+
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
@@ -44,10 +45,11 @@ defmodule RecipePerNoteWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {RecipePerNoteWeb.LayoutView, "live.html"}
+      use Phoenix.LiveView,layout: {RecipePerNoteWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
+
+      import RecipePerNoteWeb.LiveHelpers
     end
   end
 
@@ -83,6 +85,7 @@ defmodule RecipePerNoteWeb do
 
       # Import LiveView helpers (live_render, live_component, live_patch, etc)
       import Phoenix.LiveView.Helpers
+      import RecipePerNoteWeb.LiveHelpers
 
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View

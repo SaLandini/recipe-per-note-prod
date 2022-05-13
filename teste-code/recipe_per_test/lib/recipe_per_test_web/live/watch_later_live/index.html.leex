@@ -1,0 +1,122 @@
+<style>
+/* Links */
+
+/* Tags */
+
+ul, li {
+    list-style: none;
+}
+
+.box-list li{
+	display: inline-block;
+}
+
+.box-list_link a{
+    color: blue;
+}
+
+.box-list_button a{
+    font-style: normal;
+
+    font-weight: 600;
+    color: #191919;
+    font-size: 18px;
+}
+
+.div-button button{
+    position: relative;
+    left: 370px;
+    margin-bottom: 25px;
+}
+
+/* Class */
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: blue;
+
+    margin-left: 50px;
+    width: 700px;
+}
+
+.box-list {
+    background-color: rgb(241, 241, 241);
+
+    height: 50px;
+    border-radius: 5px;
+}
+
+.box-list_link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+    text-align: left;
+
+    margin-left: -50px;
+    width: 400px;
+    margin-top: 12px;
+    margin-bottom: -4px;
+}
+
+.box-list_button{
+    text-align: center;
+    direction: ltr;
+    align-self: center;
+
+    margin-left: 25px;
+    width: 55px;
+}
+
+/* IDs */
+
+</style>
+<h1>WatchLater</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, RecipePerTestWeb.WatchLaterLive.FormComponent,
+    id: @watch_later.id || :new,
+    title: @page_title,
+    action: @live_action,
+    watch_later: @watch_later,
+    current_user: @current_user,
+    return_to: Routes.watch_later_index_path(@socket, :index) %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="watchlaters">
+    <%= for watch_later <- @watchlaters do %>
+      <tr id="watch_later-<%= watch_later.id %>" class="box-list">
+                <td class="box-list_link">
+                    <a href="<%= watch_later.link %>"> <%= watch_later.link %> </a>
+                </td>
+                <td class="box-list_button">
+                  <%= if Roles.can?(@current_user, watch_later, :edit) do %>
+                    <%= live_patch "Edit", to: Routes.watch_later_index_path(@socket, :edit, watch_later)%>
+                  <% end %>
+                </td>
+                <td class="box-list_button">
+                  <%= if Roles.can?(@current_user, watch_later, :delete) do %>
+                    <%= link "Delete", to: "#", phx_click: "delete", phx_value_id: watch_later.id, data: [confirm: "Are you sure?"] %>
+                  <% end %>
+                </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="div-button">
+  <hr>
+  <button class="button-all btn">
+    <%= live_patch "New Watch later", to: Routes.watch_later_index_path(@socket, :new) %>
+  </button>
+</div>

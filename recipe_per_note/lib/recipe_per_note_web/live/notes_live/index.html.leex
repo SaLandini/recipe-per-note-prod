@@ -1,0 +1,70 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/live/note_live.css") %>"/>
+
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, RecipePerNoteWeb.NotesLive.FormComponent,
+    current_user: @current_user,
+    id: @note.id || :new,
+    title: @page_title,
+    action: @live_action,
+    notes: @note,
+    return_to: Routes.notes_index_path(@socket, :index) %>
+<% end %>
+
+<br>
+<h1>
+    Seus Notes
+</h1>
+<br>
+<div>
+<div class="ol" id="box">
+  <%= if @notes !== :nada do %>
+    <%= for notes <- @notes do%>
+      <div class="container">
+      <ul>
+          <li class="post-it">
+              <h2>
+                <%= notes.title %>
+              </h2>
+              <p>
+                <%= notes.descri_notes %>
+              </p>
+              <br>
+              <div class="options">
+                  <p>
+                      <%= live_patch "Edit", to: Routes.notes_index_path(@socket, :edit, notes) %>
+                      &nbsp;&nbsp;
+                      &nbsp;&nbsp;
+                      <%= link "Delete", to: "#", phx_click: "delete", phx_value_id: notes.id, data: [confirm: "Are you sure?"] %>
+                  </p>
+              </div>
+          </li>
+      </ul>
+      </div>
+
+  <% end %>
+  <% else %>
+    <div class="container">
+    <ul>
+        <li class="post-it">
+            <h2>
+              Exemplo Notes
+            </h2>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Paisis, filhis, espiritis santis. Quem manda na minha terra sou euzis! Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+            </p>
+            <br>
+        </li>
+    </ul>
+    </div>
+  <% end %>
+
+</div>
+</div>
+</div>
+<br>
+<div>
+    <%= link "+", to: Routes.notes_index_path(@socket, :new), class: "li-btn-more", id: "btn-more" %>
+</div>
+
+</div>

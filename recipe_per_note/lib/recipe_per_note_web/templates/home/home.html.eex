@@ -1,0 +1,67 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/live/todo_live.css") %>"/>
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/live/note_live.css") %>"/>
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/live/watchlater.css") %>"/>
+
+
+<h2>Listando os ToDos de hoje</h2><br>
+<div class="box" id="todos">
+<%= if @todos != :nada do%>
+    <%= for to_do <- @todos do %>
+    <div class="container">
+        <a href="<%=  Routes.to_do_show_path(@conn, :show, to_do) %>">
+            <div class="box_now-home" id="to_do-<%= to_do.id %>">
+                <h3><%= to_do.titles %></h3>
+                <p><%= to_do.descri %></p>
+            </div>
+        </a>
+    </div>
+    <% end %>
+<% else %>
+    <p style="color:black;">
+        Você não tem nada pra hoje nos ToDos
+    </p>
+<% end %>
+</div>
+<br>
+<h2>Listando os seus Notes</h2>
+<br>
+<div id="box">
+<%= if @notes != :nada do%>
+    <%= for note <- @notes do %>
+        <div class="ol" id="note-<%= note.id %>">
+        <div>
+            <ul>
+                <li class="post-it">
+                    <h2>
+                        <%= note.title %>
+                    </h2>
+                    <p>
+                        <%= note.descri_notes %>
+                    </p>
+                </li>
+            </ul>
+        </div>
+        </div>
+    <% end %>
+<% else %>
+    <p style="color:black;">
+        Você não tem nada no Notes
+    </p>
+<% end %>
+</div>
+<br>
+<h2>Listandos os seus WatchLater</h2>
+<br>
+<%= if @watchlater != :nada do%>
+    <%= for watch_later <- @watchlater do %>
+        <ul class="box-list" id="watch_later-<%= watch_later.id %>">
+            <li class="box-list_link">
+            <a style="color:black;" href="<%= watch_later.link %>"><%= watch_later.title %></a>
+            </li>
+        </ul>
+    <% end %>
+<% else %>
+    <p style="color:black;">
+        Você não tem nada pra hoje nos ToDos
+    </p>
+<% end %>

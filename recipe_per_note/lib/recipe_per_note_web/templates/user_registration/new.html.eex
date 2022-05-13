@@ -20,7 +20,7 @@
     <%= label f, :password %>
     <%= password_input f, :password, required: true %>
 
-    <button type="submit" data-form-action="<%= Routes.user_session_path(@conn, :create) %>">Log in</button>
+    <button type="submit" data-form-action="<%= Routes.user_session_path(@conn, :create) %>">Entrar</button>
     <% end %>
   </div>
 
@@ -32,10 +32,10 @@
         </div>
       <% end %>
       <h1>Crie uma conta</h1><br>
-        
+
         <label for="user_name">Name</label>
         <input id="user_name" name="user[name]" type="text" required="">
-        
+
         <label for="user_email">Email</label>
         <input id="user_email" name="user[email]" type="email" required="">
         <%= error_tag f, :email %>
@@ -80,5 +80,5 @@
 
   if (location.pathname === "/users/register"){
     container.classList.add("right-panel-active");
-  } 
+  }
 </script>

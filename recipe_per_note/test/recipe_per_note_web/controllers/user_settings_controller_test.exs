@@ -28,15 +28,15 @@ defmodule RecipePerNoteWeb.UserSettingsControllerTest do
           "action" => "update_password",
           "current_password" => valid_user_password(),
           "user" => %{
-            "password" => "new valid password",
-            "password_confirmation" => "new valid password"
+            "password" => "N3wValidP4$$wordT0pz&ira-&lixirBr4b0",
+            "password_confirmation" => "N3wValidP4$$wordT0pz&ira-&lixirBr4b0"
           }
         })
 
       assert redirected_to(new_password_conn) == Routes.user_settings_path(conn, :edit)
       assert get_session(new_password_conn, :user_token) != get_session(conn, :user_token)
       assert get_flash(new_password_conn, :info) =~ "Password updated successfully"
-      assert Accounts.get_user_by_email_and_password(user.email, "new valid password")
+      assert Accounts.get_user_by_email_and_password(user.email, "N3wValidP4$$wordT0pz&ira-&lixirBr4b0")
     end
 
     test "does not update password on invalid data", %{conn: conn} do

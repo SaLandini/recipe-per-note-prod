@@ -1,0 +1,48 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/live/watchlater.css") %>"/>
+
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, RecipePerNoteWeb.WatchLaterLive.FormComponent,
+    current_user: @current_user,
+    id: @watch_later.id || :new,
+    title: @page_title,
+    action: @live_action,
+    watch_later: @watch_later,
+    return_to: Routes.watch_later_index_path(@socket, :index) %>
+<% end %>
+
+<br>
+<h1>
+    Seus WatchLaters
+</h1>
+<br>
+
+<div class="list">
+  <%= if @watchlater !== :nada do %>
+  <%= for watch_later <- @watchlater do %>
+    <ul class="box-list" id="watch_later-<%= watch_later.id %>">
+        <li class="box-list_link">
+        <a style="color:black;" href="<%= watch_later.link %>"><%= watch_later.title %></a>
+        </li>
+        <li class="box-list_button">
+          <%= live_patch "Edit", to: Routes.watch_later_index_path(@socket, :edit, watch_later) %>
+        </li>
+        <li class="box-list_button">
+          <%= link "Delete", to: "#", phx_click: "delete", phx_value_id: watch_later.id, data: [confirm: "Are you sure?"] %>
+        </li>
+    </ul>
+  <% end %>
+  <%= else %>
+    <ul class="box-list" id="watch_later-1">
+        <li class="box-list_link">
+        <a style="color:black;" href="https://www.youtube.com/watch?v=yPYZpwSpKmA">WatchLater exemplo, aperte aqui pra ver</a>
+        </li>
+    </ul>
+  <% end %>
+</div>
+
+<br>
+<div>
+    <%= link "+", to: Routes.watch_later_index_path(@socket, :new), class: "li-btn-more", id: "btn-more"%>
+</div>
+</div>

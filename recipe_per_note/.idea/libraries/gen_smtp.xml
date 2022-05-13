@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="gen_smtp" type="mix">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/gen_smtp/src" />
+      <root url="file://$PROJECT_DIR$/deps/gen_smtp/src" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,21 @@
+<style>
+h1 {
+  font-weight: 700;
+  color: #000;
+}
+span{
+  font-weight: 500;
+}
+
+</style>
+<h1><%= @to_do.titles%> </h1>
+<div class="todo-content" >
+  <p>
+    <strong>Data limite:</strong> <%= @to_do.datelimit %>
+  </p>
+  <hr>
+  <p>
+    <strong>Descrição do ToDo:  </strong><br><br><%= @to_do.descri %>
+  </p>
+</div>
+<span><%= live_redirect "Back", to: Routes.to_do_index_path(@socket, :index) %></span>

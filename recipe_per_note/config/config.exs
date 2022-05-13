@@ -18,6 +18,26 @@ config :recipe_per_note, RecipePerNoteWeb.Endpoint,
   pubsub_server: RecipePerNote.PubSub,
   live_view: [signing_salt: "DmrPxpxb"]
 
+# Configures Bamboo
+config :recipe_per_note, RecipePerNote.Mailer,
+  adapter: Bamboo.SMTPAdapter,
+  server: "smtp.gmail.com",
+  port: 587,
+  username: "recipe.per.note@gmail.com",
+  password: "R3c1p&perN0t&!",
+  tls: :always,
+  ssl: false,
+  retries: 1
+
+# Configures Oban
+config :recipe_per_note, Oban,
+  repo: RecipePerNote.Repo,
+  plugins: [Oban.Plugins.Pruner, Oban.Plugins.Cron],
+  crontab: [
+    {"0 23 * * *", RecipePerNote.Annotations.NotifyTodosCloseExpirationWorker}
+  ],
+  queues: [default: 10, mailer: 10]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

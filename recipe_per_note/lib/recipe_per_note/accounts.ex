@@ -1,4 +1,5 @@
 defmodule RecipePerNote.Accounts do
+
   @moduledoc """
   The Accounts context.
   """
@@ -6,6 +7,7 @@ defmodule RecipePerNote.Accounts do
   import Ecto.Query, warn: false
   alias RecipePerNote.Repo
   alias RecipePerNote.Accounts.{User, UserToken, UserNotifier}
+  alias RecipePerNote.Mailer
 
   ## Database getters
 
@@ -167,7 +169,7 @@ defmodule RecipePerNote.Accounts do
     {encoded_token, user_token} = UserToken.build_email_token(user, "change:#{current_email}")
 
     Repo.insert!(user_token)
-    UserNotifier.deliver_update_email_instructions(user, update_email_url_fun.(encoded_token))
+    UserNotifier.deliver_update_email_instructions(user, "Update your Email", update_email_url_fun.(encoded_token)) |> RecipePerNote.Mailer.deliver_now
   end
 
   @doc """
@@ -259,7 +261,7 @@ defmodule RecipePerNote.Accounts do
     else
       {encoded_token, user_token} = UserToken.build_email_token(user, "confirm")
       Repo.insert!(user_token)
-      UserNotifier.deliver_confirmation_instructions(user, confirmation_url_fun.(encoded_token))
+      UserNotifier.deliver_confirmation_instructions(user,"Confirm your Email", confirmation_url_fun.(encoded_token)) |> Mailer.deliver_now
     end
   end
 
@@ -300,7 +302,7 @@ defmodule RecipePerNote.Accounts do
       when is_function(reset_password_url_fun, 1) do
     {encoded_token, user_token} = UserToken.build_email_token(user, "reset_password")
     Repo.insert!(user_token)
-    UserNotifier.deliver_reset_password_instructions(user, reset_password_url_fun.(encoded_token))
+    UserNotifier.deliver_reset_password_instructions(user, "Reset your password",reset_password_url_fun.(encoded_token))  |> RecipePerNote.Mailer.deliver_now
   end
 
   @doc """

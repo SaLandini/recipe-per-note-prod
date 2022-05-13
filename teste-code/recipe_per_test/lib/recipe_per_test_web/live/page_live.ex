@@ -1,8 +1,9 @@
-defmodule RecipePerNoteWeb.HomeLive do
-  use RecipePerNoteWeb, :live_view
+defmodule RecipePerTestWeb.PageLive do
+  use RecipePerTestWeb, :live_view
 
   @impl true
-  def mount(_params, _session, socket) do
+  def mount(_params, session, socket) do
+    socket = assign_defaults(session, socket)
     {:ok, assign(socket, query: "", results: %{})}
   end
 
@@ -26,7 +27,7 @@ defmodule RecipePerNoteWeb.HomeLive do
   end
 
   defp search(query) do
-    if not RecipePerNoteWeb.Endpoint.config(:code_reloader) do
+    if not RecipePerTestWeb.Endpoint.config(:code_reloader) do
       raise "action disabled when not in development"
     end
 

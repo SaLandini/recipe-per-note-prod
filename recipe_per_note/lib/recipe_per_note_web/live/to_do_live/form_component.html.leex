@@ -1,0 +1,29 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/form/todo-form.css") %>"/>
+
+<div class="box-form" align="center">
+  <%= f = form_for @changeset, "#",
+    id: "to_do-form",
+    phx_target: @myself,
+    phx_change: "validate",
+    phx_submit: "save" %>
+
+    <h2>New todo</h2>
+    <h4>Title:</h4>
+    <%= text_input f, :titles, class: "title-input" %>
+    <%= error_tag f, :titles %>
+
+    <h4>Date limit: </h4>
+    <div class="div-date">
+      <%= date_select f, :datelimit %>
+      <%= error_tag f, :datelimit %>
+    </div>
+
+    <h4>Description:</h4>
+    <%= text_input f, :descri, class: "description-input" %>
+    <%= error_tag f, :descri %>
+
+    <%= hidden_input f, :user_id, value: @current_user.id%>
+    <br>
+    <%= submit "Save", phx_disable_with: "Saving...", class: "btn-save"%>
+  </form>
+</div>

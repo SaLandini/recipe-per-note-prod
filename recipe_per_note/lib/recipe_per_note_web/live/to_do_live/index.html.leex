@@ -1,0 +1,74 @@
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@socket, "/css/live/todo_live.css") %>"/>
+
+
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal @socket, RecipePerNoteWeb.ToDoLive.FormComponent,
+    current_user: @current_user,
+    id: @to_do.id || :new,
+    title: @page_title,
+    action: @live_action,
+    to_do: @to_do,
+    return_to: Routes.to_do_index_path(@socket, :index) %>
+<% end %>
+
+<br>
+<h1>
+    Seus ToDos
+</h1>
+<br>
+
+<div class="box" id="todos">
+
+<%= if @todos !== :nada do %>
+    <%= for to_do <- @todos do %>
+    <div class="container">
+    <%= if Date.compare(to_do.datelimit, Date.utc_today()) do %>
+        <div class="<%= Time.is_passed_the_limit_date_class?(to_do.datelimit, Date.utc_today())%>" id="to_do-<%= to_do.id %>">
+            <h3><%= to_do.titles %></h3>
+            <h4><%= to_do.datelimit %></h4>
+            <p><%= to_do.descri %></p>
+
+
+            <div class="box_button">
+                <div class="container"><%= link "Ver mais", to: Routes.to_do_show_path(@socket, :show, to_do), id: "box_button-btn" %></div>
+                <div class="container"><%= link "Edit", to: Routes.to_do_index_path(@socket, :edit, to_do), id: "box_button-btn"%></div>
+                <div class="container"><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: to_do.id, data: [confirm: "Are you sure?"], id: "box_button-btn" %></div>
+            </div>
+            <div>
+                <p class="decription" id="text_date_advise"><%= Time.is_passed_the_limit_date_text?(to_do.datelimit, Date.utc_today())%></p>
+            </div>
+        </div>
+    <% end %>
+    </div>
+    <% end %>
+    <%= else %>
+        <div class="container">
+            <div class="box_late" id="to_do-1">
+                <h3>ToDos Exemplo</h3>
+                <h4>2021-09-09</h4>
+                <p> Isso é um exemplo de todos que está atrasado</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_now" id="to_do-1">
+                <h3>ToDos Exemplo</h3>
+                <h4>ano-mês-hoje</h4>
+                <p> Isso é um exemplo de todos que está pra vencer hoje</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_havetime" id="to_do-1">
+                <h3>ToDos Exemplo</h3>
+                <h4>ano-mês-futuro</h4>
+                <p> Isso é um exemplo de todos que vai vencer em breve</p>
+            </div>
+        </div>
+<% end %>
+</div>
+
+
+<div>
+    <%= link "+", to: Routes.to_do_index_path(@socket, :new), class: "li-btn-more", id: "btn-more" %>
+</div>

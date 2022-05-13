@@ -1,118 +1,53 @@
-<%= if @conn.request_path !== "/" do%>
-    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/header/header.css") %>"/>
-    <div class="header">
-        <div class="logo">
-            <%= if @current_user do %>    
-                <a href="<%= Routes.home_path(@conn, :index) %>">
-                    <img class="img-logo"
-                        src="<%= Routes.static_path(@conn, "/images/recipe_per_note_logo.png") %>"
-                        alt="Pseudo logo e sla">
-                </a>    
-            <% else %>
-                <a href="<%= Routes.page_path(@conn, :index) %>">
-                    <img class="img-logo"
-                        src="<%= Routes.static_path(@conn, "/images/recipe_per_note_logo.png") %>"
-                        alt="Pseudo logo e sla">
-                </a>
-            <% end %>
-        </div>
-        <div class="user">
-            <ul class="user-header">
-                <li>
-                    <p class="text-header">
-                        Welcome to Recipe per Note
-                    </p>
-                </li>
-                <li>
-                    <div id="options">
-                        <%= if @conn.request_path !== "/users/log_in" do%>
-                            <%= if @conn.request_path !== "/users/register" do%>
-                            <div class="box-user-header">
-                                <%= if @current_user do %>
-                                    <a href="<%= Routes.user_settings_path(@conn, :edit) %>"class="text-header" >
-                                        <%= @current_user.name %>    
-                                    </a>                    
-                                <% else %>
-                                    <%= link "Log in", to: Routes.user_session_path(@conn, :create) %>
-                                <%end%>
-                            </div>
-                            <% end %>
-                        <% end %>
-                        <%= if @current_user do %>
-                            <a href="<%= Routes.user_session_path(@conn, :delete) %>" data-csrf="<%= Phoenix.Controller.get_csrf_token() %>" data-method="delete" data-to="<%= Routes.user_session_path(@conn, :delete) %>">
-                                <i class="fi-bs-sign-out" id="out"></i>
-                            </a>
-                        <% end %>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-        <%= if @conn.request_path !== "/users/log_in" && @current_user do%>
-        <div class="menu">
-            <a href="..\pages\page-todo.html"><div class="menu_button"> To do </div></a>
-            |
-            <a href="..\pages\page-day.html"><div class="menu_button"> Week </div></a>
-            |
-            <a href="..\pages\page-watch.html"><div class="menu_button"> WatchLater </div></a>
-            |
-            <a href="..\pages\page-notes.html"><div class="menu_button"> Notes </div></a>
-        </div>
+<link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/header/header.css") %>"/>
+<div class="header">
+    <div class="logo">
+        <%= if @current_user do %>
+            <a href="<%= Routes.home_path(@conn, :index) %>">
+                <img class="img-logo"
+                    src="<%= Routes.static_path(@conn, "/images/recipe_per_note_logo.png") %>"
+                    alt="Pseudo logo e sla">
+            </a>
+        <% else %>
+            <a href="<%= Routes.home_path(@conn, :index) %>">
+                <img class="img-logo"
+                    src="<%= Routes.static_path(@conn, "/images/recipe_per_note_logo.png") %>"
+                    alt="Pseudo logo e sla">
+            </a>
         <% end %>
-<% end %>
-<%= if @conn.request_path == "/" do%>
-    <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/header/header_index.css") %>"/>
-    <div class="container-header">
-		<div class="header-index">
-			<div class="logo">
-				<%= if @current_user do %>    
-                    <a href="<%= Routes.home_path(@conn, :index) %>">
-                        <img class="img-logo"
-                            src="https://cdn.discordapp.com/attachments/804072900160258060/855959751863304223/unknown.png"
-                            alt="Pseudo logo e sla">
-                    </a>    
-                <% else %>
-                    <a href="<%= Routes.page_path(@conn, :index) %>">
-                        <img class="img-logo"
-                            src="https://cdn.discordapp.com/attachments/804072900160258060/855959751863304223/unknown.png"
-                            alt="Pseudo logo e sla">
-                    </a>
-                <% end %>
-			</div>
-			<nav>
-				<ul class="nav_links">
-					
+    </div>
+    <div class="user">
+        <ul class="user-header">
+            <li>
+                <div id="options">
+                    <%= if @conn.request_path !== "/users/log_in" do%>
+                        <%= if @conn.request_path !== "/users/register" do%>
+                        <div class="box-user-header">
+                            <%= if @current_user do %>
+                                <a href="<%= Routes.user_settings_path(@conn, :edit) %>"class="text-header" >
+                                    <%= @current_user.name %>
+                                </a>
+                            <% else %>
+                                <%= link "Log in", to: Routes.user_session_path(@conn, :create) %>
+                            <%end%>
+                        </div>
+                        <% end %>
+                    <% end %>
                     <%= if @current_user do %>
-                        <a href="<%= Routes.user_settings_path(@conn, :edit) %>"class="text-header" >
-                            <%= @current_user.name %>    
-                        </a>                    
-                    <% else %>
-                        <li>
-                            <a href="\users\register" id="create-login">
-                                Create an account
-                            </a>
-                        </li>
-                        <li>
-                            <a href="\users\log_in" id="create-login">
-                                Login
-                            </a>
-                        </li>    
-                    <%end%>
-				</ul>
-			</nav>
-		</div>
-		<div class="logotipo">
-			<div class="logotipo-h1">
-				Recipe
-			</div>
-			<br>
-			<div class="logotipo-text">
-				per
-			</div>
-			<br>
-			<div class="logotipo-h1">
-				Note
-			</div>
-		</div>
-	</div>
-<% end %>
+                        <a href="<%= Routes.user_session_path(@conn, :delete) %>" data-csrf="<%= Phoenix.Controller.get_csrf_token() %>" data-method="delete" data-to="<%= Routes.user_session_path(@conn, :delete) %>">
+                            <i class="fi-bs-sign-out" id="out"></i>
+                        </a>
+                    <% end %>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+    <%= if @conn.request_path !== "/users/log_in" do%>
+    <div class="menu">
+        <a href="<%= Routes.to_do_index_path(@conn, :index) %>"><div class="menu_button"> To do </div></a>
+        |
+        <a href="<%= Routes.watch_later_index_path(@conn, :index) %>"><div class="menu_button"> WatchLater </div></a>
+        |
+        <a href="<%= Routes.notes_index_path(@conn, :index) %>"><div class="menu_button"> Notes </div></a>
+    </div>
+    <% end %>

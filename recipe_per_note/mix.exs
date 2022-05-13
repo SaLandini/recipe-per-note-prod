@@ -19,7 +19,7 @@ defmodule RecipePerNote.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {RecipePerNote.Application, []},
+      mod: {RecipePerNote.Application, [[:bamboo]]},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -33,8 +33,11 @@ defmodule RecipePerNote.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:dotenv, "~> 3.1.0"},
       {:ex_doc, "~> 0.25"},
+      {:ecto_enum, "~> 1.4"},
       {:bcrypt_elixir, "~> 2.0"},
+      {:math, "~> 0.6.0"},
       {:phoenix, "~> 1.5.9"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
@@ -50,6 +53,9 @@ defmodule RecipePerNote.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:phx_gen_auth, "~> 0.6", only: [:dev], runtime: false},
+      {:bamboo, "~> 0.7"},
+      {:bamboo_smtp, "~> 1.2.1"},
+      {:oban, "~> 2.9"}
     ]
   end
 

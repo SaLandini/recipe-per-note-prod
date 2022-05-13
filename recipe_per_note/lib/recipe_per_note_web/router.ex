@@ -1,6 +1,5 @@
 defmodule RecipePerNoteWeb.Router do
   use RecipePerNoteWeb, :router
-
   import RecipePerNoteWeb.UserAuth
 
   pipeline :browser do
@@ -18,9 +17,9 @@ defmodule RecipePerNoteWeb.Router do
   end
 
   scope "/", RecipePerNoteWeb do
-    pipe_through :browser
+    pipe_through [:browser, :require_authenticated_user]
 
-    live "/", PageLive, :index
+    get "/", HomeController, :index
   end
 
   scope "/secret", RecipePerNoteWeb do
@@ -45,12 +44,10 @@ defmodule RecipePerNoteWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through :browser
+      pipe_through [:browser, :require_authenticated_user]
       live_dashboard "/dashboard", metrics: RecipePerNoteWeb.Telemetry
     end
   end
-
-  ## Authentication routes
 
   scope "/", RecipePerNoteWeb do
     pipe_through [:browser, :redirect_if_user_is_authenticated]
@@ -68,18 +65,44 @@ defmodule RecipePerNoteWeb.Router do
   scope "/", RecipePerNoteWeb do
     pipe_through [:browser, :require_authenticated_user]
 
-    live "/home", HomeLive, :index
     get "/users/settings", UserSettingsController, :edit
     put "/users/settings", UserSettingsController, :update
     get "/users/settings/confirm_email/:token", UserSettingsController, :confirm_email
   end
 
   scope "/", RecipePerNoteWeb do
-    pipe_through [:browser]
+    pipe_through [:browser, :require_authenticated_user]
 
     delete "/users/log_out", UserSessionController, :delete
     get "/users/confirm", UserConfirmationController, :new
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :confirm
+  end
+
+  scope "/annotations", RecipePerNoteWeb do
+    pipe_through [:browser, :require_authenticated_user, :fetch_current_user]
+
+    live "/todos", ToDoLive.Index, :index
+    live "/todos/new", ToDoLive.Index, :new
+    live "/todos/:id/edit", ToDoLive.Index, :edit
+
+    live "/todos/:id", ToDoLive.Show, :show
+    live "/todos/:id/show/edit", ToDoLive.Show, :edit
+  end
+
+  scope "/annotations", RecipePerNoteWeb do
+    pipe_through [:browser, :require_authenticated_user, :fetch_current_user]
+
+    live "/watchlater", WatchLaterLive.Index, :index
+    live "/watchlater/new", WatchLaterLive.Index, :new
+    live "/watchlater/:id/edit", WatchLaterLive.Index, :edit
+  end
+
+  scope "/annotations", RecipePerNoteWeb do
+    pipe_through [:browser, :require_authenticated_user, :fetch_current_user]
+
+    live "/notes", NotesLive.Index, :index
+    live "/notes/new", NotesLive.Index, :new
+    live "/notes/:id/edit", NotesLive.Index, :edit
   end
 end
